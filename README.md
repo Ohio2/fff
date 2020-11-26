@@ -20,6 +20,7 @@ A simple file manager written in `bash`.
 - Works as a **file picker** in `vim`/`neovim` ([**link**](https://github.com/dylanaraps/fff.vim))!
 - **Display images with w3m-img!**
 - Supports `$CDPATH`.
+- Actually uses ueberzug
 
 
 ## Table of Contents
