@@ -356,9 +356,9 @@ draw_dir() {
     printf '\e[%sH' "$scroll_new_pos"
     ((y=scroll_new_pos))
 }
-
+set ueberzug_command=/usr/bin/ueberzug layer
 draw_img() {
-    # Draw an image file on the screen using w3m-img.
+    # Draw an image file on the screen using *ueberzug
     # We can use the framebuffer; set win_info_cmd as appropriate.
     [[ $(tty) == /dev/tty[0-9]* && -w /dev/fb0 ]] &&
         win_info_cmd=fbset
@@ -372,9 +372,9 @@ draw_img() {
     [[ $mime_type != image/* ]] &&
         return
 
-    # w3m-img isn't installed, do nothing.
-    type -p "$w3m" &>/dev/null || {
-        cmd_line "error: Couldn't find 'w3m-img', is it installed?"
+    # ueberzug isn't installed, do nothing.
+    type -p "$ueberzug_command" &>/dev/null || {
+        cmd_line "error: Couldn't find 'ueberzug', is it installed?"
         return
     }
 
